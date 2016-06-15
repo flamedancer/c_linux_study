@@ -4,6 +4,8 @@
 求负操作 即是 取反加一
 对最小负数(二进制100000000) 做 求负 操作还是它本身 二进制不变
 
+Exercise 3-5. Write the function itob(n,s,b) that converts the integer n into a base b character representation in the string s. In particular, itob(n,s,16) formats s as a hexadecimal integer in s.
+
 
 Exercise 3-6. Write a version of itoa that accepts three arguments instead of two. The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
 
