@@ -14,7 +14,7 @@ int main() {
     cels = start;
     printf("This is a table for Celsius vs Fehrenheit\n");
     while(cels <= end) {
-        fehr = (9.0 / 5) * (cels + 32);
+        fehr = (9.0 / 5) * cels + 32;
         print_tm(cels, fehr);
         //printf("%6.1f\t%6d\n", cels, fehr);
         cels += step;

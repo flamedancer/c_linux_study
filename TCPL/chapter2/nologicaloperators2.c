@@ -18,6 +18,7 @@ int main () {
             break;
         s[i] = c;
     }
+    s[i] = '\0';
     printf("Result is %s \n", s);
     
 
