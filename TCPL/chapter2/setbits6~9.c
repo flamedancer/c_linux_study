@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAXLEN ((sizeof(int) * 4) + 1) 
+#define MAXLEN ((sizeof(int) * 8) + 1) 
 /*
 
 Exercise 2-6. Write a function setbits(x,p,n,y) that returns x with the n bits that begin at position p set to the rightmost n bits of y, leaving the other bits unchanged.
@@ -27,7 +27,7 @@ int main() {
     printbitnum(num1);
     printbitnum(num2);
     int p=6,n=3;
-    printf("set rignt %d of num2 to %d~%d num1: \n", n, p, p-n+1); 
+    printf("set rignt %d of num2 to %d~%d num1 (thie rightmost is position 0): \n", n, p, p-n+1); 
     printbitnum(setbits(num1, p, n, num2));
     
     printf("invert rignt %d of num1 from %d: \n", n, p); 
@@ -55,17 +55,19 @@ void printbitnum(int num) {
     unsigned int div=num;
     int remain;
     char bits[MAXLEN]= {};
+    printf("the finially len is %d \n", MAXLEN);
     int i=0;
-    for(;i<MAXLEN;i++)
+    for(;i<MAXLEN-1;i++)
         bits[i]='0';
-    bits[MAXLEN-1]='\0';
+    // now: i == MAXLEN - 1
+    bits[i--]='\0';
     while(div != 0 && i>=0) {
         remain = div % 2; 
         div = div / 2;
         bits[i]='0'+remain;
         i--;
     }
-    printf("The bit value of %32d is %s \n", num, bits);
+    printf("The bit value of %20d is %s \n", num, bits);
     // printf("The bitcunt of %s is %d \n",bits, bitcount(num));
 }
 
@@ -87,7 +89,7 @@ int setbits(int x, int p, int n, int y) {
     Y = y;
     B = ((1<<n) - 1)<<(p+1-n);
     C = ~B;
-    printbitnum(C);
+    //printbitnum(C);
     E = X & C;
     F = ((1<<n) - 1);
     H = (Y & F)<<(p+1-n);
@@ -133,7 +135,7 @@ int invert(x, p, n) {
 unsigned int rightrot(int x, int n) {
     unsigned int X, Y;
     X = x;
-    return (X>>n) | (X<<(sizeof(unsigned int) - n));
+    return (X>>n) | (X<<(sizeof(unsigned int) * 8 - n));
     
 }
 

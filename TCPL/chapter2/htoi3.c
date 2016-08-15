@@ -46,10 +46,10 @@ int computer(char a[], int start, int end) {
             value += ((a[i] - '0') * weight);
         } 
         else if(a[i] >= 'a' && a[i] <= 'f') {
-            value += ((a[i] - 'a') * weight);
+            value += ((a[i] - 'a' + 10) * weight);
         }
         else if(a[i] >= 'A' && a[i] <= 'F') {
-            value += ((a[i] - 'A') * weight);
+            value += ((a[i] - 'A' + 10) * weight);
         }
         weight *= 16;
         printf("Now a[%d] %d value is %d\n",i, a[i], value);

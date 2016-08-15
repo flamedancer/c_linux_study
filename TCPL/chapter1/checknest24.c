@@ -61,7 +61,7 @@ int main() {
         }
       
     }
-    printf("Remain unclosed chars: %s \n", nest_chars);
+    //printf("Remain unclosed chars: %s \n", nest_chars);
 }
 
 
