@@ -39,4 +39,31 @@ else
     echo "where are you?"
 fi
 
+
+f() {
+    return 0 
+}
+if f
+then
+    echo ok 
+fi
+fr="$(f)"
+echo $fr
+
+f() {
+    echo 0
+}
+if f
+then
+    echo ok 
+fi
+fr="$(f)"
+echo $fr
+
+
+f() {
+    return "sdf" 
+}
+f
+
 exit 0

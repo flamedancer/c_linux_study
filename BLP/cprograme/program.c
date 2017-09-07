@@ -1,7 +1,8 @@
-//#include “lib.h”
-#include "fred.c"
+#include <stdlib.h>
+#include "lib.h"
+//#include "fred.c"
 
 int main() {
-bill("Hello World");
-exit(0);
+    bill("Hello World");
+    exit(0);
 }

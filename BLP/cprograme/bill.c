@@ -1,4 +1,4 @@
 #include <stdio.h>
-void fred(int arg) {
-printf(“fred: you passed %d\n”, arg);
+void bill(char *arg) {
+    printf("bill: you passed %s\n", arg);
 }
